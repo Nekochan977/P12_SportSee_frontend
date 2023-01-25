@@ -1,7 +1,7 @@
 import logo from '../../assets/logo.svg'
-import './VerticalNav.css'
+import './Navigation.css'
 
-function VerticalNavigation(){
+function Navigation(){
     return(
         <header className="header">
             <div className="logo">
@@ -18,4 +18,4 @@ function VerticalNavigation(){
         </header>
     )
 }
-export default VerticalNavigation
+export default Navigation

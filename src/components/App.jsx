@@ -1,10 +1,10 @@
 import './App.css';
-import VerticalNavigation from "./navigations/VerticlaNav"
+import Navigation from "./navigations/Navigation"
 
 function App() {
   return (
     <div className="App">
-      <VerticalNavigation />
+      <Navigation />
     </div>
   );
 }
