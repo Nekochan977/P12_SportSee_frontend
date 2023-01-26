@@ -1,6 +1,7 @@
 import Navigation from "../components/navigations/Navigation"
 import VerticalNavigation from "../components/navigations/VerticalNavigation"
 // import VerticalNavigation from "./navigations/VerticalNavigation"
+import DashboardHeader from "../components/DashboardHeader"
 import "./Dashboard.css"
 
 function Dashboard() {
@@ -9,7 +10,9 @@ function Dashboard() {
         <Navigation />
         <main className="DashboardContainer">
             <VerticalNavigation />
-            <section className="dashboardContent">TOTO</section>
+            <section className="dashboardContent">
+                <DashboardHeader />
+            </section>
         </main>
       </div>
     );
