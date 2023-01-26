@@ -1,0 +1,8 @@
+.DashboardContainer{
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    
+}
+.dashboardContent{
+    padding: 3rem 5rem;
+}

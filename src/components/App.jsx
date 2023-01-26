@@ -1,12 +1,10 @@
 import './App.css';
-import Navigation from "./navigations/Navigation"
-import VerticalNavigation from "./navigations/VerticalNavigation"
+import Dashboard from "../pages/Dashboard"
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <VerticalNavigation />
+      <Dashboard />
     </div>
   );
 }
