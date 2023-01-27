@@ -1,8 +1,9 @@
-//import GetApiData from "../utils/api"
+import {getUserData} from "../utils/api"
 function DashboardHeader() {
+  const userData = getUserData();
     return (
       <div>
-        TOTO
+        Bonjour {userData.userInfos.firstName}
       </div>
       
     );
