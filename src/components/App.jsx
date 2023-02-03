@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css"
 import Dashboard from "../pages/Dashboard"
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <Dashboard />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
