@@ -13,6 +13,7 @@ function UserActivity() {
   const userActivity = getUserActivity()
   console.log(userActivity.sessions)
   const data = userActivity.sessions
+ 
   return (
     <BarChart
       className="barchart"
@@ -28,11 +29,11 @@ function UserActivity() {
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="day" />
-      <YAxis />
+      <YAxis orientation="right" />
       <Tooltip />
-      <Legend />
-      <Bar dataKey="kilogram" fill="#282D30" />
-      <Bar dataKey="calories" fill="#E60000" />
+      <Legend verticalAlign="top" align="center" iconType="circle" margin={{ top: 5, right: 30, left: 20, bottom: 30 }}/>
+      <Bar dataKey="kilogram" fill="#282D30" radius={[20, 20, 0, 0]} maxBarSize={10} barCategoryGap={10}/>
+      <Bar dataKey="calories" fill="#E60000" radius={[20, 20, 0, 0]} maxBarSize={10} barCategoryGap={10}/>
     </BarChart>
   )
 }
