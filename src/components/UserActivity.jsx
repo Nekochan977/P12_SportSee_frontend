@@ -11,7 +11,6 @@ import {
 
 function UserActivity() {
   const userActivity = getUserActivity()
-  console.log(userActivity.sessions)
   const data = userActivity.sessions
  
   return (
