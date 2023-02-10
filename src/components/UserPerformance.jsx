@@ -9,9 +9,9 @@ function UserPerformance(){
     const kind = userPerformance.kind
     // console.log(userPerformance.data.map((el)=>{
     //     console.log(el)
-    // }))
-    console.log(kind)
-    console.log(data)
+    // // }))
+    // console.log(kind)
+    // console.log(data)
 
 
     return(
@@ -27,7 +27,7 @@ function UserPerformance(){
                         data={data}
                         classname ="radar-chart"
                     >
-                        <PolarGrid />
+                        <PolarGrid radialLines={false} />
                         <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
                         <PolarRadiusAxis />
                         <Radar
