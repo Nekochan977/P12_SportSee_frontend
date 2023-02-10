@@ -1,0 +1,14 @@
+.radar-chart-container {
+    background: #282D30;
+    border-radius: 5px;
+    height: 31.5rem;
+    width: 31.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.radar-chart{
+    position: relative;
+    margin: 1rem;
+}
