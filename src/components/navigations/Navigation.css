@@ -4,6 +4,9 @@
   background-color: black;
   display: flex;
   align-content: center;
+  -webkit-box-shadow: 2px 11px 9px -3px rgba(0,0,0,0.36);
+  -moz-box-shadow: 2px 11px 9px -3px rgba(0,0,0,0.36);
+  box-shadow: 2px 11px 9px -3px rgba(0,0,0,0.36);
 }
 .logo {
   margin: 0.5rem 0.5rem 0.5rem 1rem;
