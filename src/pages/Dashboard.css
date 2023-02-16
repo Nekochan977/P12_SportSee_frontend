@@ -1,7 +1,9 @@
-.DashboardContainer {
-  display: grid;
-  grid-template-columns: 11rem 1fr;
+.main-container {
+  display: flex;
 }
-.dashboardContent {
+.dashboard-container {
   padding: 3rem 5rem;
+}
+.dashboard-content{
+  display: flex;
 }

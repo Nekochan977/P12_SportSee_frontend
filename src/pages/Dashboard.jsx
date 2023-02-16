@@ -3,25 +3,33 @@ import VerticalNavigation from "../components/navigations/VerticalNavigation"
 import DashboardHeader from "../components/DashboardHeader"
 import UserActivity from "../components/UserActivity"
 import UserAverageSession from "../components/AverageSession"
-import userPerformance from "../components/UserPerformance";
 import "./Dashboard.css"
-import UserPerformance from "../components/UserPerformance";
+import UserPerformance from "../components/UserPerformance"
+
 
 function Dashboard() {
-  return (
-    <div>
-      <Navigation />
-      <main className="DashboardContainer">
-        <VerticalNavigation />
-        <section className="dashboardContent">
-          <DashboardHeader />
-          <UserActivity />
-          <UserAverageSession />
-            <UserPerformance />
-        </section>
-      </main>
-    </div>
-  )
+    return (
+        <div>
+            <Navigation/>
+            <main className="main-container">
+                <VerticalNavigation/>
+                <div className="dashboard-container">
+                    <DashboardHeader/>
+                    <div className="dashboard-content">
+                        <section className="charts-container">
+                            <UserActivity/>
+                            <UserAverageSession/>
+                            <UserPerformance/>
+                        </section>
+                        <aside>
+                        </aside>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+    )
 }
 
 export default Dashboard

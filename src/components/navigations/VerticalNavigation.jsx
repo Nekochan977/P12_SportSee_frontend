@@ -6,29 +6,32 @@ import "./VerticalNavigation.css"
 
 function VerticalNavigation() {
   return (
-    <div className="verticalNavContainer">
-      <nav className="verticalNav">
+    <div className="vertical-nav-container">
+      <nav className="vertical-nav">
         <ul>
           <li>
             <img
-              className="verticlIcon"
+              className="vertical-nav-icon"
               src={meditationIcon}
               alt="meditaiton icon"
             />
           </li>
           <li>
             <img
-              className="verticlIcon"
+              className="vertical-nav-icon"
               src={swimmingIcon}
               alt="swimming icon"
             />
           </li>
           <li>
-            <img className="verticlIcon" src={cyclingIcon} alt="cycling icon" />
+            <img
+                className="vertical-nav-icon"
+                src={cyclingIcon}
+                alt="cycling icon" />
           </li>
           <li>
             <img
-              className="verticlIcon"
+              className="vertical-nav-icon"
               src={weightliftingIcon}
               alt="weightlifting icon"
             />
