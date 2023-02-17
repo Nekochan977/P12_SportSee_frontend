@@ -1,6 +1,8 @@
 .barchart{
-    margin: 1rem;
+    margin: 1rem 2rem;
     padding: 2rem;
-    width: 70vw;
-    height: 60vh;
+    width: 90rem;
+    height: 30rem;
+    background: #FBFBFB;
+    border-radius: 5px;
 }
