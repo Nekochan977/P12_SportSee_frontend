@@ -5,6 +5,7 @@ import UserActivity from "../components/UserActivity"
 import UserAverageSession from "../components/AverageSession"
 import "./Dashboard.css"
 import UserPerformance from "../components/UserPerformance"
+import Score from "../components/Score";
 
 
 function Dashboard() {
@@ -20,6 +21,7 @@ function Dashboard() {
                             <UserActivity/>
                             <UserAverageSession/>
                             <UserPerformance/>
+                            <Score/>
                         </section>
                         <aside>
                         </aside>
