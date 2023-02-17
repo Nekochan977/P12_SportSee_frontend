@@ -1,8 +1,9 @@
 .line-chart-container{
     background-color: #FF0000;
-    width: 315px;
-    height: 315px;
+    width: 31.5rem;
+    height: 31.5rem;
     border-radius: 10px;
     color: #ffffff;
     padding: 5px;
+    margin: 1rem;
 }

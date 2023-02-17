@@ -1,5 +1,5 @@
 import { getUserAverageSessions } from "../utils/api"
-import { LineChart, Line, XAxis, CartesianGrid } from "recharts"
+import { LineChart, Line, XAxis, CartesianGrid, Legend } from "recharts"
 import "./AverageSession.css"
 
 function UserAverageSession() {
@@ -39,15 +39,22 @@ let day = data.map((el)=>{
     return (
     <>
         <div className="line-chart-container">
-            <CartesianGrid strokeDasharray="3 3" fill="#FF0000"/>
-            <XAxis dataKey={day} />
+            {/*<CartesianGrid strokeDasharray="3 3" fill="#FF0000"/>*/}
             <LineChart width={300} height={300} data={data}>
-                <XAxis dataKey="day" height={60} />
+                {/*<Legend/>*/}
+                <XAxis dataKey="day"
+                       height={30}
+                       tickLine={true}
+                       stroke="red"
+                       // margin={{top:15, right:5, left:5}}
+                       tick={{ fontSize: 13, stroke: "#FFFF", opacity: 0.5, margin: 5}} />
                 <Line
                     type="monotone"
                     dataKey="sessionLength"
                     stroke="#FFF"
                     strokeWidth={2}
+                    activeDot={{ r: 5 }}
+                    dot={false}
                 />
             </LineChart>
         </div>

@@ -15,7 +15,6 @@ function UserPerformance(){
 
 
     return(
-        <>
             <div className="radar-chart-container">
                 <ResponsiveContainer>
                     <RadarChart
@@ -40,7 +39,6 @@ function UserPerformance(){
                 </ResponsiveContainer>
 
             </div>
-        </>
     )
 }
 export default UserPerformance
