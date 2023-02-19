@@ -1,21 +1,15 @@
 import { getUserMainData } from "../utils/api"
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import "./Score.css"
 
 function Score(){
     const userMainData = getUserMainData()
-    // console.log(userMainData.score)
     const userScore = userMainData.score
-    const restValue = (userMainData.score * 100) - 100
     const userScoreValue = (userScore * 100) + "%"
-    // console.log(restValue)
 
     const score = [
         {value: userScore},
-        // {value: 1- userMainData.score},
     ]
-
-    console.log(score[1])
 
     return(
         <div className="score-container">
