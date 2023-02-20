@@ -4,35 +4,58 @@ import "./UserPerformance.css"
 
 function UserPerformance(){
     const userPerformance = getUserPerformance()
-    // console.log(userPerformance.data)
     const data = userPerformance.data
-    const kind = userPerformance.kind
-    // console.log(userPerformance.data.map((el)=>{
-    //     console.log(el)
-    // // }))
     // console.log(kind)
     // console.log(data)
+    const formatKindData=(kind)=>{
+        switch (kind) {
+            case 1:
+                return "Cardio"
+                break
+            case 2:
+                return "Energy"
+                break
+            case 3:
+                return "Endurance"
+                break
+            case 4:
+                return "Strength"
+                break
+            case 5:
+                return "Speed"
+                break
+            case 6:
+                return "Intensity"
+                break
+            default:
+                return null
+
+        }
+    }
 
 
     return(
             <div className="radar-chart-container">
-                <ResponsiveContainer>
+                <ResponsiveContainer width="100%" height="100%">
                     <RadarChart
-                        cx={200}
+                        cx={150}
                         cy={150}
-                        outerRadius={150}
-                        width={100}
-                        height={100}
+                        outerRadius={90}
+                        width={80}
+                        height={80}
                         data={data}
                         classname ="radar-chart"
                     >
                         <PolarGrid radialLines={false} />
-                        <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
+                        <PolarAngleAxis
+                            dataKey="kind"
+                            tick={{ fill: "white", fontSize: 15}}
+                            tickFormatter={formatKindData} />
                         <PolarRadiusAxis />
                         <Radar
                             dataKey="value"
-                            stroke="#8884d8"
-                            fill="#8884d8"
+                            stroke="#ff0101"
+                            fill="#ff0101"
                             fillOpacity={0.6}
                         />
                     </RadarChart>
