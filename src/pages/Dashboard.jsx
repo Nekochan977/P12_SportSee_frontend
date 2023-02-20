@@ -13,7 +13,6 @@ import Carbs from "../assets/carbs-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Fat from "../assets/fat-icon.svg"
 const userMainData = getUserMainData()
-console.log(userMainData.keyData.calorieCount)
 
 function Dashboard() {
     return (
