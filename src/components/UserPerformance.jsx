@@ -5,8 +5,6 @@ import "./UserPerformance.css"
 function UserPerformance(){
     const userPerformance = getUserPerformance()
     const data = userPerformance.data
-    // console.log(kind)
-    // console.log(data)
     const formatKindData=(kind)=>{
         switch (kind) {
             case 1:
@@ -49,9 +47,13 @@ function UserPerformance(){
                         <PolarGrid radialLines={false} />
                         <PolarAngleAxis
                             dataKey="kind"
-                            tick={{ fill: "white", fontSize: 15}}
-                            tickFormatter={formatKindData} />
-                        <PolarRadiusAxis />
+                            tick={{ fill: "white", fontSize: 15, dy: 4}}
+                            tickFormatter={formatKindData}
+                        />
+                        <PolarRadiusAxis
+                            tick={false}
+                            axisLine={false}
+                        />
                         <Radar
                             dataKey="value"
                             stroke="#ff0101"
