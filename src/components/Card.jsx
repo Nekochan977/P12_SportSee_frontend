@@ -1,4 +1,4 @@
-
+import "./Card.css"
 function Card({icon, quantity, unit, nutrimentType}){
 
     return(
