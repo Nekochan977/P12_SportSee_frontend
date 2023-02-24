@@ -6,3 +6,11 @@
     background: #FBFBFB;
     border-radius: 5px;
 }
+.custom-tooltip{
+    background: #FF0101;
+    border: none;
+    padding: 1rem;
+}
+[role=dialog]{
+    outline: none;
+}
