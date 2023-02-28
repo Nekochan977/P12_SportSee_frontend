@@ -1,4 +1,4 @@
-.barchart{
+.barchart {
     margin: 1rem 2rem;
     padding: 2rem;
     width: 100%;
@@ -6,11 +6,59 @@
     background: #FBFBFB;
     border-radius: 5px;
 }
-.custom-tooltip{
+
+.custom-tooltip {
     background: #FF0101;
     border: none;
     padding: 1rem;
+    color: #FBFBFB;
 }
-[role=dialog]{
+
+[role=dialog] {
     outline: none;
+}
+
+/* Header */
+.barchart-header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 4rem;
+}
+.barchart-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.barchart-icons {
+    display: flex;
+}
+
+.weight, .calories {
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.black {
+    width: 8px;
+    height: 8px;
+    background-color: #282D30;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.red {
+    width: 8px;
+    height: 8px;
+    background-color: #E60000;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.header-text {
+    color: #74798C;
+    font-size: 1.4rem;
 }
