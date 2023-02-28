@@ -2,7 +2,8 @@
   display: flex;
 }
 .dashboard-container {
-  padding: 3rem 5rem;
+  /*padding: 3rem 5rem;*/
+  width: 100%;
 }
 .dashboard-content{
   display: flex;
@@ -16,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 1rem;
 }
 .aside-container{
   display: flex;

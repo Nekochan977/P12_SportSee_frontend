@@ -1,8 +1,8 @@
 .radar-chart-container {
     background: #282D30;
     border-radius: 5px;
-    height: 31.5rem;
-    width: 31.5rem;
+    width: 25rem;
+    height: 23rem;
     display: flex;
     justify-content: center;
     align-items: center;

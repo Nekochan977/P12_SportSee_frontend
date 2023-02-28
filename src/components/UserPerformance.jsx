@@ -36,18 +36,18 @@ function UserPerformance(){
             <div className="radar-chart-container">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadarChart
-                        cx={150}
-                        cy={150}
-                        outerRadius={90}
-                        width={80}
-                        height={80}
+                        cx={115}
+                        cy={110}
+                        outerRadius={70}
+                        width={40}
+                        height={40}
                         data={data}
                         classname ="radar-chart"
                     >
                         <PolarGrid radialLines={false} />
                         <PolarAngleAxis
                             dataKey="kind"
-                            tick={{ fill: "white", fontSize: 15, dy: 4}}
+                            tick={{ fill: "white", fontSize: 10, dy: 3, padding: 5}}
                             tickFormatter={formatKindData}
                         />
                         <PolarRadiusAxis

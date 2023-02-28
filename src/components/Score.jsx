@@ -19,28 +19,28 @@ function Score(){
                 height="100%"
             >
                 <PieChart
-                    width={400}
-                    height={400}
+                    width={150}
+                    height={300}
                 >
 
                     <Pie
                         data={score}
                         dataKey="value"
-                        outerRadius={90}
+                        outerRadius={70}
                         fill="#FFF"
-                        cx={150}
-                        cy={110}
+                        cx={115}
+                        cy={80}
                     />
                     <Pie
                         data={score}
                         dataKey="value"
-                        innerRadius={90}
-                        outerRadius={100}
-                        startAngle={90}
+                        innerRadius={60}
+                        outerRadius={70}
+                        startAngle={80}
                         endAngle={180}
                         fill="#ff0000"
-                        cx={150}
-                        cy={110}
+                        cx={115}
+                        cy={80}
                     />
                 </PieChart>
             </ResponsiveContainer>

@@ -1,10 +1,11 @@
 .score-container{
     position: relative;
     background: #FBFBFB;
-    border-radius: 5px;
-    width: 31.5rem;
-    height: 31.5rem;
-    padding: 1rem;
+    width: 25rem;
+    height: 23rem;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 5px;
     margin: 1rem;
 }
 .score-title{
