@@ -25,11 +25,14 @@ function Dashboard() {
                     <div className="dashboard-content">
                         <section className="charts-container">
                             <UserActivity/>
-                            <UserAverageSession/>
-                            <UserPerformance/>
-                            <Score/>
+                            <div className="small-charts">
+                                <UserAverageSession/>
+                                <UserPerformance/>
+                                <Score/>
+                            </div>
+
                         </section>
-                        <aside>
+                        <aside className="aside-container">
                             <Card
                                 icon={Calories}
                                 quantity={userMainData.keyData.calorieCount} unit="Kcal"

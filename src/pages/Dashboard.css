@@ -8,10 +8,17 @@
   display: flex;
 }
 .charts-container{
-  /*display: grid;*/
-  /*grid-template-rows: 1fr 1fr;*/
-  /*grid-template-columns: 1fr 1fr 1fr;*/
-  /*justify-content: space-evenly;*/
   display: flex;
   flex-wrap: wrap;
+  width: 70%;
+}
+.small-charts{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.aside-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
