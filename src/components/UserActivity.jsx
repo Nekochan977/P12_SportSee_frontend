@@ -77,6 +77,7 @@ function UserActivity() {
                             left: -10,
                             bottom: 0,
                         }}
+                        tickFormatter={(day) => new Date(day).getDate()}
                     />
                     <YAxis
                         orientation="right"
