@@ -6,23 +6,13 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer
 } from "recharts"
 import "./UserActivity.css"
-import {logDOM} from "@testing-library/react";
 
 function UserActivity() {
     const userActivity = getUserActivity()
     const data = userActivity.sessions
-    // console.log(data)
-
-    // let day = data.map((el)=>{
-    //     let slice = el.day.slice(8)
-    //     let parsed = parseInt(slice)
-    //     return parsed
-    // })
-    // console.log(day)
 
     const CustomToolTip = ({active, payload}) => {
         if (active) {
