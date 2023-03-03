@@ -23,5 +23,6 @@ export const getUserPerformance = () => {
 
 export const getUserActivity = () => {
   // next time => fetch to API instead of mock data
-  return USER_ACTIVITY[0]
+  // return USER_ACTIVITY[0]
+  return fetch('http://localhost:3000/user/12/activity')
 }

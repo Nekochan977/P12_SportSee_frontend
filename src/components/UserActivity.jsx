@@ -1,4 +1,4 @@
-import {getUserActivity} from "../utils/api"
+import {getUserActivity, getUserMainData} from "../utils/api"
 import {
     BarChart,
     Bar,
@@ -9,11 +9,25 @@ import {
     ResponsiveContainer
 } from "recharts"
 import "./UserActivity.css"
+import {useEffect, useState} from "react";
 
 function UserActivity() {
-    const userActivity = getUserActivity()
-    const data = userActivity.sessions
+    // const userActivity = getUserActivity()
+    // const data = userActivity.sessions
+    const [userData, setUserData] = useState(null)
 
+    useEffect(() => {
+        const getData = async() => {
+            const result = await getUserActivity()
+            const response = await result.json()
+            setUserData(response.data)
+             // console.log(response.data)
+        }
+        getData()
+    }, [])
+
+    console.log(userData)
+    const data = userData.sessions
     const CustomToolTip = ({active, payload}) => {
         if (active) {
             return (
