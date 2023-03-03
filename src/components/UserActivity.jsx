@@ -12,8 +12,11 @@ import "./UserActivity.css"
 import {useEffect, useState} from "react";
 
 function UserActivity() {
+    // ** To retrieve data directly from mock data ** //
     // const userActivity = getUserActivity()
     // const data = userActivity.sessions
+
+    // ** To retrieve data from call API ** //
     const [userData, setUserData] = useState(null)
 
     useEffect(() => {
@@ -21,12 +24,13 @@ function UserActivity() {
             const result = await getUserActivity()
             const response = await result.json()
             setUserData(response.data)
-             // console.log(response.data)
         }
         getData()
     }, [])
 
-    console.log(userData)
+    if (userData === null) {
+        return null
+    }
     const data = userData.sessions
     const CustomToolTip = ({active, payload}) => {
         if (active) {
