@@ -12,9 +12,21 @@ import Calories from "../assets/calories-icon.svg"
 import Carbs from "../assets/carbs-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Fat from "../assets/fat-icon.svg"
-const userMainData = getUserMainData()
+import {useEffect, useState} from "react";
+// const userMainData = getUserMainData()
 
 function Dashboard() {
+    const [userData, setUserData] = useState(null)
+
+    useEffect(() => {
+        const getData = async() => {
+            const result = await getUserMainData()
+            const response = await result.json()
+            setUserData(response.data)
+            console.log(response.data)
+        }
+        getData()
+    }, [])
     return (
         <div>
             <Navigation/>
@@ -32,28 +44,28 @@ function Dashboard() {
                             </div>
 
                         </section>
-                        <aside className="aside-container">
+                        {userData && <aside className="aside-container">
                             <Card
                                 icon={Calories}
-                                quantity={userMainData.keyData.calorieCount} unit="Kcal"
+                                quantity={userData.keyData.calorieCount} unit="Kcal"
                                 nutrimentType="Calories"
                             />
                             <Card
                                 icon={Protein}
-                                quantity={userMainData.keyData.proteinCount} unit="g"
+                                quantity={userData.keyData.proteinCount} unit="g"
                                 nutrimentType="Protein"
                             />
                             <Card
                                 icon={Carbs}
-                                quantity={userMainData.keyData.carbohydrateCount} unit="g"
+                                quantity={userData.keyData.carbohydrateCount} unit="g"
                                 nutrimentType="Glucides"
                             />
                             <Card
                                 icon={Fat}
-                                quantity={userMainData.keyData.lipidCount} unit="g"
+                                quantity={userData.keyData.lipidCount} unit="g"
                                 nutrimentType="Lipides"
                             />
-                        </aside>
+                        </aside>}
                     </div>
 
                 </div>

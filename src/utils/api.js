@@ -1,13 +1,14 @@
 import {
-  USER_MAIN_DATA,
+  // USER_MAIN_DATA,
   USER_AVERAGE_SESSIONS,
   USER_PERFORMANCE,
   USER_ACTIVITY,
 } from "../__mocks__/mock_data"
 
-export const getUserMainData = () => {
+export const getUserMainData = async () => {
   // next time => fetch to API instead of mock data
-  return USER_MAIN_DATA[0]
+  // return USER_MAIN_DATA[0]
+  return fetch('http://localhost:3000/user/12')
 }
 
 export const getUserAverageSessions = () => {
