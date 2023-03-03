@@ -13,7 +13,8 @@ export const getUserMainData = async () => {
 
 export const getUserAverageSessions = () => {
   // next time => fetch to API instead of mock data
-  return USER_AVERAGE_SESSIONS[0]
+  // return USER_AVERAGE_SESSIONS[0]
+  return fetch('http://localhost:3000/user/12/average-sessions')
 }
 
 export const getUserPerformance = () => {

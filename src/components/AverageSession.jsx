@@ -1,12 +1,28 @@
-import { getUserAverageSessions } from "../utils/api"
+import {getUserAverageSessions} from "../utils/api"
 import { LineChart, Line, XAxis, CartesianGrid, Legend } from "recharts"
 import "./AverageSession.css"
+import {useEffect, useState} from "react";
 
 function UserAverageSession() {
-  const averageSession = getUserAverageSessions()
-  const data = averageSession.sessions
+  // const averageSession = getUserAverageSessions()
+  // const data = averageSession.sessions
+    const [userAverageSession, setUserAverageSession] = useState(null)
 
-let day = data.map((el)=>{
+    useEffect(() => {
+        const getData = async() => {
+            const result = await getUserAverageSessions()
+            const response = await result.json()
+            setUserAverageSession(response.data)
+            // console.log(response.data)
+        }
+        getData()
+    }, [])
+
+    if (userAverageSession === null) {
+        return null
+    }
+
+let day = userAverageSession.sessions.map((el)=>{
 
     switch (el.day) {
         case 1 :
@@ -49,7 +65,7 @@ let day = data.map((el)=>{
                     right: 0,
                     bottom: 40,
                 }}
-                data={data}>
+                data={userAverageSession.sessions}>
                 {/*<Legend/>*/}
                 <XAxis dataKey="day"
                        height={20}
