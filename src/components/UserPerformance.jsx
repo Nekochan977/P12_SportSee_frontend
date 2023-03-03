@@ -1,10 +1,25 @@
-import { getUserPerformance } from "../utils/api"
+import {getUserPerformance} from "../utils/api"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import "./UserPerformance.css"
+import {useEffect, useState} from "react";
 
 function UserPerformance(){
-    const userPerformance = getUserPerformance()
-    const data = userPerformance.data
+    // const userPerformance = getUserPerformance()
+    // const data = userPerformance.data
+    const [userPerformance, setUserPerformance] = useState(null)
+
+    useEffect(() => {
+        const getData = async() => {
+            const result = await getUserPerformance()
+            const response = await result.json()
+            setUserPerformance(response.data)
+        }
+        getData()
+    }, [])
+
+    if (userPerformance === null) {
+        return null
+    }
     const formatKindData=(kind)=>{
         switch (kind) {
             case 1:
@@ -41,7 +56,7 @@ function UserPerformance(){
                         outerRadius={70}
                         width={40}
                         height={40}
-                        data={data}
+                        data={userPerformance.data}
                         classname ="radar-chart"
                     >
                         <PolarGrid radialLines={false} />
