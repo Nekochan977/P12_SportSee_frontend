@@ -1,10 +1,23 @@
 import { getUserMainData } from "../utils/api"
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import "./Score.css"
+import {useEffect, useState} from "react";
 
 function Score(){
-    const userMainData = getUserMainData()
-    const userScore = userMainData.score
+    const [userMainData, setUserMainData] = useState(null)
+
+    useEffect(() => {
+        const getData = async() => {
+            const result = await getUserMainData()
+            const response = await result.json()
+            setUserMainData(response.data)
+        }
+        getData()
+    }, [])
+    if (userMainData === null) {
+        return null
+    }
+    const userScore = userMainData.todayScore || userMainData.score
     const userScoreValue = (userScore * 100) + "%"
 
     const score = [
