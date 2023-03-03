@@ -23,7 +23,6 @@ function Dashboard() {
             const result = await getUserMainData()
             const response = await result.json()
             setUserData(response.data)
-            console.log(response.data)
         }
         getData()
     }, [])
