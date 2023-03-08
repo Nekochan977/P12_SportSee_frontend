@@ -38,6 +38,9 @@ function VerticalNavigation() {
           </li>
         </ul>
       </nav>
+      <div className="vertical-text">
+        <p>Copiryght, SportSee 2020</p>
+      </div>
     </div>
   )
 }
