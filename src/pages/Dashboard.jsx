@@ -13,19 +13,16 @@ import Carbs from "../assets/carbs-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Fat from "../assets/fat-icon.svg"
 import {useEffect, useState} from "react";
+
+import UserMainData from "../components/UserMainData";
 // const userMainData = getUserMainData()
 
 function Dashboard() {
-    const [userData, setUserData] = useState(null)
+    const userData = UserMainData()
+    if (userData === null) {
+        return null
+    }
 
-    useEffect(() => {
-        const getData = async() => {
-            const result = await getUserMainData()
-            const response = await result.json()
-            setUserData(response.data)
-        }
-        getData()
-    }, [])
     return (
         <div>
             <Navigation/>
@@ -66,9 +63,7 @@ function Dashboard() {
                             />
                         </aside>}
                     </div>
-
                 </div>
-
             </main>
         </div>
     )

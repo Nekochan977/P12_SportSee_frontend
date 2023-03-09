@@ -1,30 +1,21 @@
-import { getUserMainData } from "../utils/api"
-import { PieChart, Pie, ResponsiveContainer } from 'recharts';
+import {PieChart, Pie, ResponsiveContainer} from 'recharts'
 import "./Score.css"
-import {useEffect, useState} from "react";
+import UserMainData from "./UserMainData"
 
-function Score(){
-    const [userMainData, setUserMainData] = useState(null)
+function Score() {
+    const userData = UserMainData()
 
-    useEffect(() => {
-        const getData = async() => {
-            const result = await getUserMainData()
-            const response = await result.json()
-            setUserMainData(response.data)
-        }
-        getData()
-    }, [])
-    if (userMainData === null) {
+    if (userData === null) {
         return null
     }
-    const userScore = userMainData.todayScore || userMainData.score
+    const userScore = userData.todayScore || userData.score
     const userScoreValue = (userScore * 100) + "%"
 
     const score = [
         {value: userScore},
     ]
 
-    return(
+    return (
         <div className="score-container">
             <h3 className="score-title">Score</h3>
             <ResponsiveContainer
@@ -35,7 +26,6 @@ function Score(){
                     width={150}
                     height={300}
                 >
-
                     <Pie
                         data={score}
                         dataKey="value"
@@ -57,13 +47,12 @@ function Score(){
                     />
                 </PieChart>
             </ResponsiveContainer>
-            <p className="score-text">
+            {userScoreValue && <p className="score-text">
                 <span className="score-value">{userScoreValue}</span> <br/>
                 de votre objectif
-            </p>
+            </p>}
         </div>
     )
-
-
 }
+
 export default Score

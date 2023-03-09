@@ -13,7 +13,7 @@ function UserAverageSession() {
             const result = await getUserAverageSessions()
             const response = await result.json()
             setUserAverageSession(response.data)
-            console.log(response.data)
+            // console.log(response.data)
         }
         getData()
     }, [])
