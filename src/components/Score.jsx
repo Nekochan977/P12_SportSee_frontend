@@ -1,19 +1,9 @@
 import {PieChart, Pie, ResponsiveContainer} from 'recharts'
 import "./Score.css"
-import UserMainData from "./UserMainData"
+import PropTypes from "prop-types";
 
-function Score() {
-    const userData = UserMainData()
 
-    if (userData === null) {
-        return null
-    }
-    const userScore = userData.todayScore || userData.score
-    const userScoreValue = (userScore * 100) + "%"
-
-    const score = [
-        {value: userScore},
-    ]
+function Score({score, userScoreValue}) {
 
     return (
         <div className="score-container">
@@ -47,12 +37,16 @@ function Score() {
                     />
                 </PieChart>
             </ResponsiveContainer>
-            {userScoreValue && <p className="score-text">
+            <p className="score-text">
                 <span className="score-value">{userScoreValue}</span> <br/>
                 de votre objectif
-            </p>}
+            </p>
         </div>
     )
+}
+Score.propTypes = {
+    score: PropTypes.arrayOf(PropTypes.object),
+    userScoreValue: PropTypes.string,
 }
 
 export default Score

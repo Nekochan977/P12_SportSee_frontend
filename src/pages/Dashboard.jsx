@@ -12,11 +12,13 @@ import Carbs from "../assets/carbs-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Fat from "../assets/fat-icon.svg"
 import UserMainData from "../components/UserMainData"
-// **
-// If using mock data
-// import { getUserMainData } from "../utils/api"
-// const userMainData = getUserMainData()
-// **
+
+/**
+ * If using mock data:
+ * import {getUserMockMainData} from "../utils/api"
+ * const mockData = getUserMockMainData()
+ * console.log(mockData)
+*/
 
 
 function Dashboard() {
@@ -24,6 +26,12 @@ function Dashboard() {
     if (userData === null) {
         return null
     }
+    const userScore = userData.todayScore || userData.score
+    const userScoreValue = (userScore * 100) + "%"
+
+    const score = [
+        {value: userScore},
+    ]
 
     return (
         <div>
@@ -33,7 +41,7 @@ function Dashboard() {
                 <div className="dashboard-container">
                     {userData &&
                         <DashboardHeader
-                        firstName={userData.userInfos.firstName}/>
+                            firstName={userData.userInfos.firstName}/>
                     }
                     <div className="dashboard-content">
                         <section className="charts-container">
@@ -41,7 +49,10 @@ function Dashboard() {
                             <div className="small-charts">
                                 <UserAverageSession/>
                                 <UserPerformance/>
-                                <Score/>
+                                <Score
+                                    score={score}
+                                    userScoreValue={userScoreValue}
+                                />
                             </div>
 
                         </section>
