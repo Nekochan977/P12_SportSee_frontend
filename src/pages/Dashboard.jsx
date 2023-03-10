@@ -5,17 +5,19 @@ import UserActivity from "../components/UserActivity"
 import UserAverageSession from "../components/AverageSession"
 import "./Dashboard.css"
 import UserPerformance from "../components/UserPerformance"
-import Score from "../components/Score";
-import Card from "../components/Card";
-import { getUserMainData } from "../utils/api"
+import Score from "../components/Score"
+import Card from "../components/Card"
 import Calories from "../assets/calories-icon.svg"
 import Carbs from "../assets/carbs-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Fat from "../assets/fat-icon.svg"
-import {useEffect, useState} from "react";
-
-import UserMainData from "../components/UserMainData";
+import UserMainData from "../components/UserMainData"
+// **
+// If using mock data
+// import { getUserMainData } from "../utils/api"
 // const userMainData = getUserMainData()
+// **
+
 
 function Dashboard() {
     const userData = UserMainData()
@@ -29,7 +31,10 @@ function Dashboard() {
             <main className="main-container">
                 <VerticalNavigation/>
                 <div className="dashboard-container">
-                    <DashboardHeader/>
+                    {userData &&
+                        <DashboardHeader
+                        firstName={userData.userInfos.firstName}/>
+                    }
                     <div className="dashboard-content">
                         <section className="charts-container">
                             <UserActivity/>

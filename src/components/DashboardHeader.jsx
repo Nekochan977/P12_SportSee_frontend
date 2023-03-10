@@ -1,21 +1,20 @@
 import "./DashboardHeader.css"
+import PropTypes from "prop-types"
 
-import UserMainData from "./UserMainData";
-
-function DashboardHeader() {
-
-    const userData = UserMainData()
-
-
+function DashboardHeader({firstName}) {
     return (
 
         <div className="dashboard-header-container">
-            {userData && <h1 className="dashboard-header-title">Bonjour&nbsp;
-                <span className="red-text">{userData.userInfos.firstName}</span>
-            </h1>}
+            <h1 className="dashboard-header-title">Bonjour&nbsp;
+                <span className="red-text">{firstName}</span>
+            </h1>
             <p className="dashboard-header-text">Félicitation! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     )
+}
+
+DashboardHeader.propTypes = {
+    firstName: PropTypes.string,
 }
 
 export default DashboardHeader
