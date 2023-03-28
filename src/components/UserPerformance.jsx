@@ -3,9 +3,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 import "./UserPerformance.css"
 import {useEffect, useState} from "react";
 
+/**
+ * User's performance RadarChart
+ * @component
+ * @param {object} userPerformance data of user's performance
+ * @param {string} kind type of activity
+ * @returns {react component} radar chart by activity type
+ */
 function UserPerformance(){
-    // const userPerformance = getUserPerformance()
-    // const data = userPerformance.data
     const [userPerformance, setUserPerformance] = useState(null)
 
     useEffect(() => {
@@ -24,22 +29,16 @@ function UserPerformance(){
         switch (kind) {
             case 1:
                 return "Cardio"
-                break
             case 2:
                 return "Energy"
-                break
             case 3:
                 return "Endurance"
-                break
             case 4:
                 return "Strength"
-                break
             case 5:
                 return "Speed"
-                break
             case 6:
                 return "Intensity"
-                break
             default:
                 return null
 
