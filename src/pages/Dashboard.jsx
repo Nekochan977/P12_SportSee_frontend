@@ -14,12 +14,18 @@ import Fat from "../assets/fat-icon.svg"
 import UserMainData from "../components/UserMainData"
 
 /**
+ * User's dashboard
+ * @param {object} userData user's main data
+ * @returns User's dashboard with all components
+ */
+
+/**
  * If using mock data:
  * import {getUserMockMainData} from "../utils/api"
  * const mockData = getUserMockMainData()
  * console.log(mockData)
+ * replace const userData = UserMainData() by const userData = mockData
 */
-
 
 function Dashboard() {
     const userData = UserMainData()
@@ -60,22 +66,22 @@ function Dashboard() {
                             <Card
                                 icon={Calories}
                                 quantity={userData.keyData.calorieCount} unit="Kcal"
-                                nutrimentType="Calories"
+                                nutrientType="Calories"
                             />
                             <Card
                                 icon={Protein}
                                 quantity={userData.keyData.proteinCount} unit="g"
-                                nutrimentType="Protein"
+                                nutrientType="Protéines"
                             />
                             <Card
                                 icon={Carbs}
                                 quantity={userData.keyData.carbohydrateCount} unit="g"
-                                nutrimentType="Glucides"
+                                nutrientType="Glucides"
                             />
                             <Card
                                 icon={Fat}
                                 quantity={userData.keyData.lipidCount} unit="g"
-                                nutrimentType="Lipides"
+                                nutrientType="Lipides"
                             />
                         </aside>}
                     </div>
