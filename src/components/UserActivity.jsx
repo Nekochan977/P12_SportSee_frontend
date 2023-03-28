@@ -1,4 +1,4 @@
-import {getUserActivity, getUserMainData} from "../utils/api"
+import {getUserActivity} from "../utils/api"
 import {
     BarChart,
     Bar,
@@ -9,17 +9,24 @@ import {
     ResponsiveContainer
 } from "recharts"
 import "./UserActivity.css"
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
+
+/**
+ * User's daily activity Barchart
+ * @component
+ * @param {object} data of user activity
+ * @param {string} day date of activity
+ * @returns {react component} Chart bar of daily activities
+ */
 
 function UserActivity() {
-    // ** To retrieve data directly from mock data ** //
-    // const userActivity = getUserActivity()
-    // const data = userActivity.sessions
-
-    // ** To retrieve data from call API ** //
     const [userData, setUserData] = useState(null)
 
     useEffect(() => {
+        /**
+         * Retrieve data from call API
+         * @returns {object} Json object with user id & sessions data
+         */
         const getData = async() => {
             const result = await getUserActivity()
             const response = await result.json()
@@ -31,8 +38,13 @@ function UserActivity() {
     if (userData === null) {
         return null
     }
+
     const data = userData.sessions
     const CustomToolTip = ({active, payload}) => {
+        /**
+         * payload: Array of object
+         * @param {array} The source data of the content to be displayed in the tooltip, usually calculated internally.
+         */
         if (active) {
             return (
                 <div className="custom-tooltip">
@@ -53,10 +65,12 @@ function UserActivity() {
                 <div className="barchart-icons">
                     <div className="weight">
                         <div className="black"></div>
-                        <p className="header-text"> Poids (kg)</p></div>
+                        <p className="header-text"> Poids (kg)</p>
+                    </div>
                     <div className="calories">
                         <div className="red"></div>
-                        <p className="header-text"> Calories brûlées (Kcal)</p></div>
+                        <p className="header-text"> Calories brûlées (Kcal)</p>
+                    </div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height="100%">
@@ -71,7 +85,8 @@ function UserActivity() {
                 >
                     <CartesianGrid
                         strokeDasharray="1 1"
-                        vertical={false}/>
+                        vertical={false}
+                    />
 
                     <XAxis
                         dataKey="day"
@@ -85,7 +100,7 @@ function UserActivity() {
                             left: -10,
                             bottom: 0,
                         }}
-                        tickFormatter={(day) => new Date(day).getDate()}
+                        tickFormatter={(day) => new Date(day).getDate().toString()}
                     />
                     <YAxis
                         orientation="right"
