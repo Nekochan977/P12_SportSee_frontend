@@ -30,15 +30,15 @@ function UserPerformance(){
             case 1:
                 return "Cardio"
             case 2:
-                return "Energy"
+                return "Energie"
             case 3:
                 return "Endurance"
             case 4:
-                return "Strength"
+                return "Force"
             case 5:
-                return "Speed"
+                return "Vitesse"
             case 6:
-                return "Intensity"
+                return "Intensité"
             default:
                 return null
 
@@ -50,11 +50,11 @@ function UserPerformance(){
             <div className="radar-chart-container">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadarChart
-                        cx={115}
-                        cy={110}
-                        outerRadius={70}
-                        width={40}
-                        height={40}
+                        cx={100}
+                        cy={100}
+                        outerRadius={60}
+                        width={35}
+                        height={35}
                         data={userPerformance.data}
                         classname ="radar-chart"
                     >

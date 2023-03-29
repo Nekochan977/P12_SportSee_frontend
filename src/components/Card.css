@@ -1,15 +1,15 @@
 .card-container{
-    padding: 0 2rem;
+    padding-left: 2rem;
 }
 .card-item{
     display: flex;
     padding: 1rem;
     background: #FBFBFB;
     border-radius: 5px;
-    margin: 1rem 2rem;
+    margin: 1rem;
 }
 .card-icon {
-    padding: 1rem 3rem 1rem 1rem;
+    padding: 1rem;
 }
 .card-text-content{
     display: flex;

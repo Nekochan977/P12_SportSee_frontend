@@ -1,9 +1,9 @@
 .score-container{
     position: relative;
     background: #FBFBFB;
-    width: 25rem;
+    width: 23rem;
     height: 23rem;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #ffffff;
     padding: 5px;
     margin: 1rem;
@@ -11,15 +11,15 @@
 .score-title{
     font-size: 1.5rem;
     line-height: 24px;
-    padding: 2rem 0 0 2rem;
+    padding: 1rem 0 0 1rem;
     color: #282D30;
 }
 .score-text {
     position: absolute;
-    left: 50%;
+    left: 57%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
+    /*font-size: 1.2rem;*/
     line-height: 20px;
     font-weight: 700;
     text-align: center;

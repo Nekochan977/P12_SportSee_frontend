@@ -4,8 +4,7 @@ import "./AverageSession.css"
 import {useEffect, useState} from "react";
 
 function UserAverageSession() {
-    // const averageSession = getUserAverageSessions()
-    // const data = averageSession.sessions
+
     const [userAverageSession, setUserAverageSession] = useState(null)
 
     useEffect(() => {
@@ -13,7 +12,6 @@ function UserAverageSession() {
             const result = await getUserAverageSessions()
             const response = await result.json()
             setUserAverageSession(response.data)
-            // console.log(response.data)
         }
         getData()
     }, [])
@@ -57,17 +55,18 @@ function UserAverageSession() {
             <div className="line-chart-container">
                 <h2 className="line-chart-title">Durée moyenne des sessions</h2>
                 <LineChart
-                    width={250}
-                    height={220}
+                    width={215}
+                    height={200}
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        padding: "5px"
+                        padding: "10px",
+                        marginTop: "10px"
                     }}
                     data={userAverageSession.sessions}>
                     <XAxis
                         dataKey="day"
-                        height={20}
+                        height={10}
                         tickLine={true}
                         padding={{left: 5, right: 5}}
                         axisLine={false}

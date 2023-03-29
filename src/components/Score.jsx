@@ -8,14 +8,8 @@ function Score({score, userScoreValue}) {
     return (
         <div className="score-container">
             <h3 className="score-title">Score</h3>
-            <ResponsiveContainer
-                width="100%"
-                height="100%"
-            >
-                <PieChart
-                    width={150}
-                    height={300}
-                >
+            <ResponsiveContainer>
+                <PieChart>
                     <Pie
                         data={score}
                         dataKey="value"
