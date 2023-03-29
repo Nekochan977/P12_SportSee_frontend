@@ -2,6 +2,13 @@ import {PieChart, Pie, ResponsiveContainer} from 'recharts'
 import "./Score.css"
 import PropTypes from "prop-types";
 
+/**
+ * User's score on the objectives of actual date
+ * @component
+ * @param {number} score of the user on daily objective
+ * @param {string} userScoreValue value of score as percentage
+ * @returns {react component} pie chart with user's score
+ */
 
 function Score({score, userScoreValue}) {
 

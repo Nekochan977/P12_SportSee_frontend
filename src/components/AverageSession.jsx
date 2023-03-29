@@ -3,6 +3,13 @@ import {LineChart, Line, XAxis, Tooltip} from "recharts"
 import "./AverageSession.css"
 import {useEffect, useState} from "react";
 
+/**
+ * User's Average Session LineChart
+ * @component
+ * @param {object} userAverageSession data of user's sessions
+ * @param {string} day day of week
+ * @returns {react component} line chart by activity length
+ */
 function UserAverageSession() {
 
     const [userAverageSession, setUserAverageSession] = useState(null)
