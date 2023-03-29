@@ -39,7 +39,7 @@ function VerticalNavigation() {
         </ul>
       </nav>
       <div className="vertical-text">
-        <p>Copiryght, SportSee 2020</p>
+        <p>Copyright, SportSee 2020</p>
       </div>
     </div>
   )

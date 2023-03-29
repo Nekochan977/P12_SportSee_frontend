@@ -16,7 +16,7 @@ To start this project you need to first launch the Backend and then the Frontend
 - [Clone the backend repository:](https://github.com/Nekochan977/P12_SportSee_backend)
 - Install dependencies with command:
 'yarn install'
- -Run the micro API with command:
+ - Run the micro API with command:
 'yarn dev'
 
 The micro API is launched on port 3000 (default port)
